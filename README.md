@@ -11,6 +11,7 @@ the first data row is row 1. From cars 6 to 10, display only the columns Model, 
 - Requirement: The row selection in part (b) must use iloc; the column selection in part (c) must
 use column labels.
 - ## What Happened?
+  The code first inspects the cars DataFrame by printing its overall dimensions via .shape and listing its features using .columns.tolist(). It then satisfies the row selection requirement by using positional slicing with .iloc[5:10] to extract 1-based rows 6 through 10 into a new DataFrame called cars_6_to_10. Finally, it performs label-based column selection on that slice by passing a list of target names—['Model', 'mpg', 'cyl', 'hp', 'gear']—in double square brackets to filter and order the specified columns before displaying the final result
 - ## Implementation
 ```python
 import pandas as pd
