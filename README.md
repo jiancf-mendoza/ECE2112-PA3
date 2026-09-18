@@ -30,6 +30,7 @@ print(selected_columns)
 Store the two results in toyota and pontiac, respectively. Do not use a hard-coded row number to
 locate either model.
 - ## What Happened?
+  The code uses boolean indexing (cars['Model'] == '...') to dynamically search for specific car models without hardcoding row indices. First, it filters the dataset for 'Toyota Corolla' and stores the entire matching row in toyota. Next, it filters for 'Pontiac Firebird' and stores the result in pontiac; however, it misses the requirement to restrict pontiac to only the Model, mpg, hp, and wt columns (e.g., using pontiac[['Model', 'mpg', 'hp', 'wt']]). Both filtered outputs are then printed to the console with descriptive labels.
 - ## Implementation
 ```python
 toyota = cars[cars['Model'] == 'Toyota Corolla']
@@ -46,6 +47,7 @@ Lotus Europa, and Ferrari Dino. For these records, retain only Model, mpg, cyl, 
 rather than by row numbers. Display selected cars and its shape.
 - Required check: The final DataFrame must contain exactly three rows and five columns.
 - ## What Happened?
+The code sets up two lists: target_models containing the required car models and target_columns specifying the required features. It uses the .isin() method to dynamically filter the dataset for those specific models without using hardcoded row numbers, followed by column subsetting using [target_columns] to retain only the specified fields. The resulting DataFrame is stored in selected_cars, which is then printed alongside its shape to verify that it meets the required dimensions of 3 rows and 5 columns.
 - ## Implementation
 ```python
 target_models = ["Datsun 710", "Lotus Europa", "Ferrari Dino"]
